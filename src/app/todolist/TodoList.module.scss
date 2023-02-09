@@ -1,0 +1,5 @@
+.todoItem {
+  @apply flex items-center border py-2 px-4;
+  @apply data-active:bg-green-300;
+  transition: all 0.35s ease-in-out;
+}
