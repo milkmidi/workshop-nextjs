@@ -45,3 +45,5 @@ https://beta.nextjs.org/docs/rendering/server-and-client-components
 https://beta.nextjs.org/docs/data-fetching/generating-static-params
 
 ### streaming
+
+### JWT
