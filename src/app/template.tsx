@@ -1,30 +1,38 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+type ActiveLinkProps = React.ComponentPropsWithoutRef<typeof Link>;
+
+const ActiveLink: React.FC<ActiveLinkProps> = ({ href, children }) => {
+  const pathname = usePathname();
+  return (
+    <Link href={href} className="my-nav__item" data-active={pathname === href}>
+      {children}
+    </Link>
+  );
+};
 
 const RootTemplate = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="fixed z-[9999] flex w-full items-center justify-center">
-        <nav className="mt-4 flex w-11/12 space-x-2 rounded-2xl border border-solid border-gray-700 bg-gray-800 p-3 shadow-xl">
-          <Link href="/" className="my-btn bg-white">
-            Home
-          </Link>
-          <Link href="/dashboard/settings" className="my-btn bg-white">
-            dashboard/settings
-          </Link>
-          <Link href="/dynamic-segments/123" className="my-btn bg-white">
-            /dynamic-segments/123
-          </Link>
-          <Link href="/isr" className="my-btn bg-white">
-            isr
-          </Link>
-          <Link href="/ssr" className="my-btn bg-white">
-            ssr
-          </Link>
+      <div className="my-nav-space" />
+      <div className="my-nav-wrap">
+        <nav className="my-nav">
+          <ActiveLink href="/">Home</ActiveLink>
+          <ActiveLink href="/dashboard/settings">dashboard/settings</ActiveLink>
+          <ActiveLink href="/dynamic-segments/123">/dynamic-segments/123</ActiveLink>
+          <ActiveLink href="/isr">isr</ActiveLink>
+          <ActiveLink href="/ssr">ssr</ActiveLink>
+          <ActiveLink href="/products">products</ActiveLink>
+          <ActiveLink href="/todolist">todolist</ActiveLink>
+          <ActiveLink href="/jwt">jwt</ActiveLink>
         </nav>
       </div>
-      <div className="container mx-auto pt-12">
-        <div className="min-h-[100vh] rounded-3xl bg-white px-4 pt-16 md:px-8  md:pt-24">{children}</div>
+      <div className="container mx-auto">
+        <div className="min-h-[100vh] rounded-3xl bg-white px-6 py-10">{children}</div>
       </div>
     </>
   );

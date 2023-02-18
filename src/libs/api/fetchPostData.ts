@@ -6,7 +6,7 @@ export type TodoType = {
   done: boolean;
 };
 export const fetchTodoList = async (): Promise<TodoType[]> => {
-  const res = await fetch(`https://milkmidi.vercel.app/api/todolist/nextjs?${Date.now()}&delay=2000`, {
+  const res = await fetch(`https://milkmidi.vercel.app/api/todolist/nextjs?${Date.now()}&delay=500`, {
     cache: 'no-store',
   });
   const data: TodoType[] = await res.json();

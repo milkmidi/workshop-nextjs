@@ -3,7 +3,7 @@
 export default function Home() {
   return (
     <main>
-      <h1>hi, NextJS 13</h1>
+      <h1 className="text-3xl">hi, NextJS 13</h1>
     </main>
   );
 }

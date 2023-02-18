@@ -1,4 +1,3 @@
-import React from 'react';
 import { fetchTodoList } from '@/libs/api/fetchPostData';
 import TodoList from './TodoList';
 

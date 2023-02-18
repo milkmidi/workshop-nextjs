@@ -20,16 +20,16 @@ export const setAPIToken = (token: string) => {
   axiosInstance.defaults.headers.authorization = `Bearer ${token}`;
 };
 
-export const fetchValidateToken = (token: string) => {
+/* export const fetchValidateToken = (token: string) => {
   return axios('https://milkmidi.vercel.app/api/auth/validate-token', {
     method: 'POST',
     headers: {
       authorization: `Bearer ${token}`,
     },
   }).then(({ data }) => data);
-};
+}; */
 
-const DEBUG_TOKEN_EXPIRESIN = 2000 * 10; // 20s
+const DEBUG_TOKEN_EXPIRESIN = 4000 * 10; // 40s
 export const apiLogin = (email: string, password: string): Promise<ApiLoginResponse> => {
   return axios
     .post('https://milkmidi.vercel.app/api/auth/login', {
@@ -43,6 +43,6 @@ export const apiLogin = (email: string, password: string): Promise<ApiLoginRespo
 
 export const apiMe = () => {
   return axiosInstance('https://milkmidi.vercel.app/api/auth/me', {
-    method: 'GET',
+    method: 'POST',
   }).then(({ data }) => data);
 };

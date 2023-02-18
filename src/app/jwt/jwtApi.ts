@@ -1,3 +1,5 @@
+import 'server-only';
+
 export type User = {
   name: string;
   email: string;

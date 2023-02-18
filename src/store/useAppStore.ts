@@ -4,16 +4,17 @@ import { getJWTToken, setToken, cleanToken } from '../utils/cookie-utils';
 
 type AppStore = {
   user?: User;
-  init(): Promise<void>;
+  // init(): Promise<void>;
   login: (email: string, password: string) => Promise<void>;
   logout(): void;
+  setUser(user: User): void;
 };
 const useAppStore = create<AppStore>((set) => {
   return {
     user: undefined,
-    async init() {
+    /* async init() {
       console.log('init', getJWTToken());
-    },
+    }, */
     async login(email: string, password: string) {
       const result = await apiLogin(email, password);
       const token = result.accessToken;
@@ -22,6 +23,13 @@ const useAppStore = create<AppStore>((set) => {
       });
       setToken(token);
       setAPIToken(token);
+    },
+    setUser(user: User) {
+      console.log('serUser', user);
+      set({
+        user,
+      });
+      setAPIToken(getJWTToken());
     },
     logout() {
       cleanToken();
