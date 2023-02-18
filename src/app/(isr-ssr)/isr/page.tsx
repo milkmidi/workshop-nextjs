@@ -1,9 +1,9 @@
-export const revalidate = 15; // revalidate this page every 60 seconds
+export const revalidate = 20; // revalidate this page every 20 seconds
 
 async function fetchData() {
   console.log('isr fetchData');
   const res = await fetch(`https://milkmidi.vercel.app/api/mock?delay=500&value=ISR&_d_=${Date.now()}`, {
-    next: { revalidate: 10 },
+    next: { revalidate: 10 }, // 或是在這寫也可以
   });
   const data = await res.json();
   return data;

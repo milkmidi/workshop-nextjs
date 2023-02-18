@@ -41,4 +41,7 @@ https://beta.nextjs.org/docs/routing/defining-routes#dynamic-segments
 ### Client Component VS. Server Component
 https://beta.nextjs.org/docs/rendering/server-and-client-components
 
+### static params
+https://beta.nextjs.org/docs/data-fetching/generating-static-params
+
 ### streaming

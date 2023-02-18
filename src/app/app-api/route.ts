@@ -3,6 +3,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
+  console.log(request);
   const data = await fetch('https://jsonplaceholder.typicode.com/todos/1').then((response) =>
     response.json(),
   );
