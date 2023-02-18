@@ -9,7 +9,6 @@ const ISRLayout = ({ children }: { children: React.ReactNode }) => {
             Last Rendered: {new Date().toLocaleTimeString()}
           </div>
         </div>
-        {/* <React.Suspense fallback={<div>LLOOADDBBC</div>}>{children}</React.Suspense> */}
         {children}
       </div>
     </section>

@@ -1,6 +1,6 @@
 async function fetchData() {
   console.log('ssr fetchData');
-  const res = await fetch(`https://nextjs-vercel-milkmidi.vercel.app/api/mock?delay=1000&value=ISR`, {
+  const res = await fetch(`https://milkmidi.vercel.app/api/mock?delay=1000&value=SSR&_d_=${Date.now()}`, {
     cache: 'no-store',
   });
   const data = await res.json();

@@ -7,7 +7,11 @@ module.exports = {
     data: {
       active: 'active~="true"', // data-active="true"
     },
-    extend: {},
+    extend: {
+      colors: {
+        red: '#e55039',
+      },
+    },
   },
   plugins: [],
 };

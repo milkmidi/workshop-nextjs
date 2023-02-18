@@ -50,7 +50,7 @@ const TodoList: React.FC<TodoListProps> = (props) => {
   // Create inline loading UI
   const isMutating = isFetching || isPending;
   return (
-    <div className="my-spinner-wrap" style={{ opacity: !isMutating ? 1 : 0.5 }}>
+    <div className="my-spinner-wrap" data-loading={isMutating}>
       <div className="mb-2">
         <form onSubmit={atSubmit}>
           <input type="text" className="my-input" value={input} onChange={(e) => setInput(e.target.value)} />
@@ -64,7 +64,7 @@ const TodoList: React.FC<TodoListProps> = (props) => {
                 {todo.text},{`${todo.done}`}
               </button>
               <button
-                className="bg-red ml-auto rounded p-2 text-sm text-white"
+                className="ml-auto rounded bg-red p-2 text-sm text-white"
                 onClick={() => atDeleteTodo(todo.id)}
               >
                 Delete

@@ -3,12 +3,15 @@ import ProductCard from './ProductCard';
 import Skeleton from './Skeleton';
 
 type ProductType = {
-  id: string,
-}
-const fetchProductData = ():Promise<ProductType[]> => {
-  return fetch('https://milkmidi.vercel.app/api/products', {
-    cache: 'no-store',
-  }).then((response) => response.json());
+  id: string;
+};
+const fetchProductData = (): Promise<ProductType[]> => {
+  return fetch(
+    `https://my-json-server.typicode.com/milkmidi/typicode/products?_delay=1000&_d_=${Date.now()}`,
+    {
+      cache: 'no-store',
+    },
+  ).then((response) => response.json());
 };
 
 async function StreamingPage() {

@@ -1,5 +1,5 @@
 export async function apiAddTodo(text: string) {
-  await fetch(`http://milkmidi.vercel.app/api/todolist/nextjs`, {
+  await fetch(`https://milkmidi.vercel.app/api/todolist/nextjs`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -8,7 +8,7 @@ export async function apiAddTodo(text: string) {
   });
 }
 export async function apiActionTodo(id: string, method: string) {
-  await fetch(`http://milkmidi.vercel.app/api/todolist/nextjs`, {
+  await fetch(`https://milkmidi.vercel.app/api/todolist/nextjs`, {
     method,
     headers: {
       'Content-Type': 'application/json',

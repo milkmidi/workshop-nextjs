@@ -7,8 +7,8 @@ type ProductType = {
   price: number;
 };
 const fetchProductWithId = (id: string): Promise<ProductType> => {
-  const delay = Math.random() * 1000 + 500;
-  return fetch(`https://milkmidi.vercel.app/api/products/${id}?delay=${delay}`, {
+  const delay = Math.random() * 2000 + 500;
+  return fetch(`https://my-json-server.typicode.com/milkmidi/typicode/products/${id}?_delay=${delay}`, {
     cache: 'no-store',
   }).then((response) => response.json());
 };
