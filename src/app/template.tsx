@@ -18,17 +18,26 @@ const ActiveLink: React.FC<ActiveLinkProps> = ({ href, children }) => {
 const RootTemplate = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="my-nav-space" />
+      <div className="my-nav-space h-[100px]" />
       <div className="my-nav-wrap">
-        <nav className="my-nav">
-          <ActiveLink href="/">Home</ActiveLink>
-          <ActiveLink href="/dashboard/settings">dashboard/settings</ActiveLink>
-          <ActiveLink href="/dynamic-segments/123">/dynamic-segments/123</ActiveLink>
-          <ActiveLink href="/isr">isr</ActiveLink>
-          <ActiveLink href="/ssr">ssr</ActiveLink>
-          <ActiveLink href="/products">products</ActiveLink>
-          <ActiveLink href="/todolist">todolist</ActiveLink>
-          <ActiveLink href="/jwt">jwt</ActiveLink>
+        <nav className="my-nav !block !space-x-0 space-y-2">
+          <div className="flex w-full">
+            <ActiveLink href="/">Home</ActiveLink>
+            <ActiveLink href="/01-routing-fundamentals">01-routing</ActiveLink>
+            <ActiveLink href="/02-dashboard/settings">02-dashboard/settings</ActiveLink>
+            <ActiveLink href="/organize-a">02-organize routes</ActiveLink>
+            <ActiveLink href="/04-dynamic-segments/123">04-dynamic-segments</ActiveLink>
+            <ActiveLink href="/05-error-page">05-error</ActiveLink>
+          </div>
+          <div className="flex w-full">
+            <ActiveLink href="/isr">06-isr/ssr</ActiveLink>
+            <ActiveLink href="/client">07-Client/Server Component</ActiveLink>
+            <ActiveLink href="/08-posts/1">08-posts</ActiveLink>
+            <ActiveLink href="/09-streaming">09-streaming</ActiveLink>
+            <ActiveLink href="/10-products">10-products</ActiveLink>
+            <ActiveLink href="/11-todolist">11-todolist</ActiveLink>
+            <ActiveLink href="/13-jwt">13-jwt</ActiveLink>
+          </div>
         </nav>
       </div>
       <div className="container mx-auto">

@@ -1,12 +1,12 @@
 # Next.js 13 workshop
 
-## 1 Installation
+## Installation
 create next app new feature
 ```
 npx create-next-app@latest --experimental-app
 ```
 
-## 2 Routing Fundamentals
+## 1 Routing Fundamentals
 - https://beta.nextjs.org/docs/routing/fundamentals
 - page.js：建立該路由的頁面，並且可以透過網址來訪問。
 - layout.js: 建立給子路由共享的頁面，layout.jsx 會包住其子頁面。
@@ -18,11 +18,9 @@ npx create-next-app@latest --experimental-app
 轉換成 React Component 後的關系圖，會依檔名一層一層的包。
 ![app](assets/images/03.png)
 
-### Route Segments
+## 2 Route Segments
 ![app](assets/images/04.png)
 
-### TODO
-建立 /about 頁
 
 ## 3  Organize routes
 https://beta.nextjs.org/docs/routing/defining-routes#example-organize-routes-without-affecting-the-url-path
@@ -32,18 +30,20 @@ https://beta.nextjs.org/docs/routing/defining-routes#example-organize-routes-wit
 https://beta.nextjs.org/docs/routing/defining-routes#dynamic-segments
 動態 routes
 
-## 5 SSR , ISR
+## 5 error
 
-### error
+## 6 SSR , ISR
 
-### api routes
-
-### Client Component VS. Server Component
+## 7 Client Component VS. Server Component
 https://beta.nextjs.org/docs/rendering/server-and-client-components
 
-### static params
+## 8 static params
 https://beta.nextjs.org/docs/data-fetching/generating-static-params
 
-### streaming
+## 9 streaming
+## 10 products
+## 11 todolist
 
-### JWT
+## 12 api routes
+
+## 13 JWT

@@ -29,7 +29,7 @@ export const setAPIToken = (token: string) => {
   }).then(({ data }) => data);
 }; */
 
-const DEBUG_TOKEN_EXPIRESIN = 4000 * 10; // 40s
+const DEBUG_TOKEN_EXPIRESIN = 3000 * 10; // 40s
 export const apiLogin = (email: string, password: string): Promise<ApiLoginResponse> => {
   return axios
     .post('https://milkmidi.vercel.app/api/auth/login', {

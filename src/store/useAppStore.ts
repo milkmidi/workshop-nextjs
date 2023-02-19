@@ -12,9 +12,6 @@ type AppStore = {
 const useAppStore = create<AppStore>((set) => {
   return {
     user: undefined,
-    /* async init() {
-      console.log('init', getJWTToken());
-    }, */
     async login(email: string, password: string) {
       const result = await apiLogin(email, password);
       const token = result.accessToken;
