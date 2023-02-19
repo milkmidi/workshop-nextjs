@@ -17,15 +17,49 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(({ addUtilities, matchUtilities, addComponents, addVariant, e }) => {
-      const newUtilities = {
+    require('rippleui'),
+    require('@tailwindcss/aspect-ratio'),
+    plugin(({ addUtilities, addComponents, addVariant, e }) => {
+      addUtilities({
         '.flex-center': {
           display: 'flex',
           'justify-content': 'center',
           'align-items': 'center',
         },
-      };
-      addUtilities(newUtilities);
+      });
+
+      addComponents({
+        '.mm-btn': {
+          'border-radius': '4px',
+          height: '60px',
+          'line-height': '40px',
+          'font-size': '20px',
+          'font-weight': 'bold',
+          padding: '8px 20px',
+          border: '1px solid black',
+          '@apply cursor-pointer inline-flex justify-center items-center': {}, // cssInJS 可以用這樣寫
+          '&:hover': {
+            filter: 'brightness(1.75)',
+          },
+        },
+        '.mm-spinner': {
+          display: 'inline-block',
+          width: '16px',
+          height: '16px',
+          'vertical-align': 'text-bottom',
+          border: '3px solid currentColor',
+          'border-right-color': 'transparent',
+          'border-radius': '50%',
+          '@apply animate-spin': {}, // cssInJS 可以用這樣寫
+        },
+      });
+
+      addVariant('child', '& > *');
+
+      // 登入後，會在 body 加上 logged-in class
+      addVariant('logged-in', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => `body.logged-in .${e(`logged-in${separator}${className}`)}`);
+      });
 
       // https://tailwindcss.com/docs/plugins#complex-variants
       addVariant('important', ({ container }) => {

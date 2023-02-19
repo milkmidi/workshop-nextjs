@@ -18,7 +18,7 @@ const ActiveLink: React.FC<ActiveLinkProps> = ({ href, children }) => {
 const RootTemplate = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="my-nav-space h-[100px]" />
+      <div className="my-nav-space !h-[150px]" />
       <div className="my-nav-wrap">
         <nav className="my-nav !block !space-x-0 space-y-2">
           <div className="flex w-full">
@@ -37,6 +37,7 @@ const RootTemplate = ({ children }: { children: React.ReactNode }) => {
             <ActiveLink href="/10-products">10-products</ActiveLink>
             <ActiveLink href="/11-todolist">11-todolist</ActiveLink>
             <ActiveLink href="/13-jwt">13-jwt</ActiveLink>
+            <ActiveLink href="/14-tailwindcss">14-tailwindcss</ActiveLink>
           </div>
         </nav>
       </div>

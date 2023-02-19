@@ -2,8 +2,9 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
+// eslint-disable-next-line
 export default async function middleware(req: NextRequest) {
-  console.log(req.nextUrl);
+  // console.log(req.nextUrl);
   return NextResponse.next();
 }
 
