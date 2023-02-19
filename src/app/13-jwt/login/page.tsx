@@ -33,7 +33,7 @@ const Login = () => {
     setErrorMessage('');
     login(inputs.email, inputs.password)
       .then(() => {
-        router.push('/03-jwt');
+        router.push('/13-jwt');
       })
       .catch((error) => {
         console.error(error);
