@@ -2,7 +2,7 @@ import React from 'react';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { fetchValidateToken, fetchMe } from './jwtApi';
-import InjectAppStore from './InjectAppStore';
+import StoreInitializer from './StoreInitializer';
 import ClientPage from './ClientPage';
 
 const JWTPage = async () => {
@@ -24,10 +24,12 @@ const JWTPage = async () => {
   const meResult = await fetchMe(jwtTokenObj.value);
   return (
     <section data-name="JWT ServerComponent">
-      <InjectAppStore user={meResult.user} />
-      <div className="my-code mb-4">
-        <pre>{JSON.stringify(meResult, null, 2)}</pre>
-      </div>
+      <StoreInitializer user={meResult.user} />
+      <section data-name="Server">
+        <div className="my-code mb-4">
+          <pre>{JSON.stringify(meResult, null, 2)}</pre>
+        </div>
+      </section>
       <ClientPage />
     </section>
   );

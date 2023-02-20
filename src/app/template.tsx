@@ -28,9 +28,9 @@ const RootTemplate = ({ children }: { children: React.ReactNode }) => {
             <ActiveLink href="/organize-a">02-organize routes</ActiveLink>
             <ActiveLink href="/04-dynamic-segments/123">04-dynamic-segments</ActiveLink>
             <ActiveLink href="/05-error-page">05-error</ActiveLink>
+            <ActiveLink href="/isr">06-isr/ssr</ActiveLink>
           </div>
           <div className="flex w-full">
-            <ActiveLink href="/isr">06-isr/ssr</ActiveLink>
             <ActiveLink href="/client">07-Client/Server Component</ActiveLink>
             <ActiveLink href="/08-posts/1">08-posts</ActiveLink>
             <ActiveLink href="/09-streaming">09-streaming</ActiveLink>
@@ -38,6 +38,7 @@ const RootTemplate = ({ children }: { children: React.ReactNode }) => {
             <ActiveLink href="/11-todolist">11-todolist</ActiveLink>
             <ActiveLink href="/13-jwt">13-jwt</ActiveLink>
             <ActiveLink href="/14-tailwindcss">14-tailwindcss</ActiveLink>
+            <ActiveLink href="/16-cart">16-cart</ActiveLink>
           </div>
         </nav>
       </div>

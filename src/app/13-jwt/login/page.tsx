@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import useAppStore from '@/store/useAppStore';
 
+// zusntad 可以這樣寫
+const { login } = useAppStore.getState();
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const [inputs, setInputs] = useState({
@@ -15,7 +17,7 @@ const Login = () => {
 
   const [errorMessage, setErrorMessage] = useState('');
 
-  const login = useAppStore((state) => state.login);
+  // const login = useAppStore((state) => state.login);
 
   const atInputChange = (e: any) => {
     const target = e.currentTarget;
