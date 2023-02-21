@@ -5,6 +5,8 @@ import useCartStore, { ProductType } from './useCartStore';
 import TotalPrice from './TotalPrice';
 import StoreInitializer from './StoreInitializer';
 
+// https://www.youtube.com/watch?v=OpMAH2hzKi8
+
 const fetchProductData = (): Promise<ProductType[]> => {
   return fetch(
     `https://my-json-server.typicode.com/milkmidi/typicode/products?_delay=1000&_d_=${Date.now()}`,

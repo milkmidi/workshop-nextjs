@@ -20,7 +20,7 @@ const ClientPage = () => {
   if (error) return <div>failed to load</div>;
   if (!data) return <div>Client loading...</div>;
   return (
-    <section data-name="client">
+    <section data-name="Client" className="style-green" data-stripes>
       <ul>
         {data.map((d) => {
           return (

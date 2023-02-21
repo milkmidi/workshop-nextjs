@@ -21,7 +21,7 @@ const RootTemplate = ({ children }: { children: React.ReactNode }) => {
       <div className="my-nav-space !h-[150px]" />
       <div className="my-nav-wrap">
         <nav className="my-nav !block !space-x-0 space-y-2">
-          <div className="flex w-full">
+          <div className="flex w-full flex-wrap child:w-1/5">
             <ActiveLink href="/">Home</ActiveLink>
             <ActiveLink href="/01-routing-fundamentals">01-routing</ActiveLink>
             <ActiveLink href="/02-dashboard/settings">02-dashboard/settings</ActiveLink>
@@ -29,8 +29,6 @@ const RootTemplate = ({ children }: { children: React.ReactNode }) => {
             <ActiveLink href="/04-dynamic-segments/123">04-dynamic-segments</ActiveLink>
             <ActiveLink href="/05-error-page">05-error</ActiveLink>
             <ActiveLink href="/isr">06-isr/ssr</ActiveLink>
-          </div>
-          <div className="flex w-full">
             <ActiveLink href="/client">07-Client/Server Component</ActiveLink>
             <ActiveLink href="/08-posts/1">08-posts</ActiveLink>
             <ActiveLink href="/09-streaming">09-streaming</ActiveLink>

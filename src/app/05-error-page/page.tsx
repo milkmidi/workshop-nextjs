@@ -9,7 +9,7 @@ export default function Page() {
     throw new Error('I crashed!');
   }
   return (
-    <div>
+    <section data-name="ErrorPage" className="style-green" data-stripes>
       <button
         className="button"
         onClick={() => {
@@ -18,6 +18,6 @@ export default function Page() {
       >
         Crashed {counter}
       </button>
-    </div>
+    </section>
   );
 }

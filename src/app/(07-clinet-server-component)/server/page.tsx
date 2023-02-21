@@ -14,7 +14,7 @@ const fetchTodoList = async (): Promise<TodoType[]> => {
 const ServerPage = async () => {
   const data = await fetchTodoList();
   return (
-    <section data-name="server" className="style-2" data-stripes>
+    <section data-name="Server">
       <ul>
         {data.map((d) => {
           return (

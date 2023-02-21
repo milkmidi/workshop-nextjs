@@ -50,30 +50,37 @@ const TodoList: React.FC<TodoListProps> = (props) => {
   // Create inline loading UI
   const isMutating = isFetching || isPending;
   return (
-    <div className="my-spinner-wrap" data-loading={isMutating}>
-      <div className="mb-2">
-        <form onSubmit={atSubmit}>
-          <input type="text" className="my-input" value={input} onChange={(e) => setInput(e.target.value)} />
-        </form>
+    <section data-name="TodoList" className="style-green">
+      <div className="my-spinner-wrap" data-loading={isMutating}>
+        <div className="mb-2">
+          <form onSubmit={atSubmit}>
+            <input
+              type="text"
+              className="my-input"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+          </form>
+        </div>
+        <div className=" space-y-2">
+          {data.map((todo) => {
+            return (
+              <div key={todo.id} data-id={todo.id} className={style.todoItem} data-active={todo.done}>
+                <button onClick={() => atToggleTodo(todo.id)}>
+                  {todo.text},{`${todo.done}`}
+                </button>
+                <button
+                  className="ml-auto rounded bg-red p-2 text-sm text-white"
+                  onClick={() => atDeleteTodo(todo.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div className=" space-y-2">
-        {data.map((todo) => {
-          return (
-            <div key={todo.id} data-id={todo.id} className={style.todoItem} data-active={todo.done}>
-              <button onClick={() => atToggleTodo(todo.id)}>
-                {todo.text},{`${todo.done}`}
-              </button>
-              <button
-                className="ml-auto rounded bg-red p-2 text-sm text-white"
-                onClick={() => atDeleteTodo(todo.id)}
-              >
-                Delete
-              </button>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    </section>
   );
 };
 

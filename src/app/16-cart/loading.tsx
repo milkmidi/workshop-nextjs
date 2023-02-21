@@ -1,7 +1,3 @@
-import React from 'react';
-
-function Loading() {
+export default function Loading() {
   return <div className="my-spinner" />;
 }
-
-export default Loading;

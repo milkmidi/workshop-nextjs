@@ -47,7 +47,7 @@ const Login = () => {
   };
 
   return (
-    <section data-name="Login - ClientComponent">
+    <section data-name="Login" className="style-green">
       <form onSubmit={atSubmit} className="my-spinner-wrap space-y-3" data-loading={loading}>
         <div>
           <input

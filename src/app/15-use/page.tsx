@@ -15,6 +15,10 @@ async function getData() {
 
 const Page = () => {
   const name = use(getData());
-  return <p>{name}!</p>;
+  return (
+    <section data-name="use" className="style-green">
+      {name}!
+    </section>
+  );
 };
 export default Page;

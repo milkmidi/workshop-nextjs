@@ -11,7 +11,13 @@ const AddToCart: React.FC<AddToCartProps> = (props) => {
   const { productId, price } = props;
   const addToCart = useCartStore((state) => state.addToCart);
   return (
-    <div data-product-id={productId} data-price={price}>
+    <section
+      data-name="AddToCart"
+      className="style-green"
+      data-stripes
+      data-product-id={productId}
+      data-price={price}
+    >
       <button
         className="button"
         onClick={() => {
@@ -25,7 +31,7 @@ const AddToCart: React.FC<AddToCartProps> = (props) => {
       >
         AddToCart
       </button>
-    </div>
+    </section>
   );
 };
 
