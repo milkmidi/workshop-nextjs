@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import useCartStore from './useCartStore';
+import useCartStore from '@/store/useCartStore';
 
 type AddToCartProps = {
   productId: string;

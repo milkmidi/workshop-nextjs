@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ProductCard.module.scss';
-import AddToCart from './AddToCart';
+import AddToCart from './AddToCart.client';
 
 type ProductType = {
   title: string;

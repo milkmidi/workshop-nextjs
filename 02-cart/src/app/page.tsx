@@ -1,19 +1,14 @@
 import React, { Suspense } from 'react';
+import useCartStore, { ProductType } from '@/store/useCartStore';
+import Cart from '@/components/Cart';
 import ProductCard from './ProductCard';
 import Skeleton from './Skeleton';
-import useCartStore, { ProductType } from './useCartStore';
-import TotalPrice from './TotalPrice';
-import StoreInitializer from './StoreInitializer';
-
-// https://www.youtube.com/watch?v=OpMAH2hzKi8
+import StoreInitializer from './StoreInitializer.client';
 
 const fetchProductData = (): Promise<ProductType[]> => {
-  return fetch(
-    `https://my-json-server.typicode.com/milkmidi/typicode/products?_delay=1000&_d_=${Date.now()}`,
-    {
-      cache: 'no-store',
-    },
-  ).then((response) => response.json());
+  return fetch(`https://my-json-server.typicode.com/milkmidi/typicode/products?_d_=${Date.now()}`, {
+    cache: 'no-store',
+  }).then((response) => response.json());
 };
 
 async function StreamingPage() {
@@ -22,10 +17,10 @@ async function StreamingPage() {
   // Server Side
   useCartStore.setState({ products });
   return (
-    <div>
+    <div className="container mx-auto">
       {/* Client Side */}
+      <Cart />
       <StoreInitializer products={products} />
-      <TotalPrice />
       <div className="-mx-2 flex flex-wrap">
         {products.map((product) => {
           return (
