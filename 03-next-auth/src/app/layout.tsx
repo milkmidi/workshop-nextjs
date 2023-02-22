@@ -2,8 +2,9 @@ import '@/styles/globals.scss';
 import '@/styles/style.scss';
 import { type Session } from 'next-auth';
 import { headers } from 'next/headers';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../pages/api/auth/[...nextauth]';
+import Link from 'next/link';
+// import { getServerSession } from 'next-auth/next';
+// import { authOptions } from '../pages/api/auth/[...nextauth]';
 import AuthContextWrapper from './AuthContextWrapper';
 import StoreInitializer from './StoreInitializer.client';
 
@@ -26,6 +27,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <head />
       <body>
+        <nav className="bg-black p-2">
+          <Link href="/dashboard" className="my-btn bg-white">
+            Dashboard
+          </Link>
+        </nav>
         {/* @ts-ignore */}
         <StoreInitializer user={session?.user} />
         <AuthContextWrapper session={session}>{children}</AuthContextWrapper>

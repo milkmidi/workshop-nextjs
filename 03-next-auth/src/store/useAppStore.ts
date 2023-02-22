@@ -13,7 +13,7 @@ const useAppStore = create<AppStore>((set) => {
   return {
     user: undefined,
     setUser(user: UserType) {
-      console.log('serUser', user);
+      // console.log('serUser', user);
       set({
         user,
       });

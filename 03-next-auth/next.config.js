@@ -6,6 +6,9 @@ const nextConfig = {
   eslint: {
     // ignoreDuringBuilds: true,
   },
+  env: {
+    NEXTAUTH_SECRET: 'milkmidi',
+  },
 };
 
 module.exports = nextConfig;

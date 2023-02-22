@@ -3,10 +3,14 @@ import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 // Initialize NextAuth
 export const authOptions: NextAuthOptions = {
-  /* pages: {
-    signIn: '/auth/email-signin',
-    verifyRequest: '/auth/verify-request',
-  }, */
+  session: {
+    strategy: 'jwt',
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: '/auth/signin',
+    // verifyRequest: '/auth/verify-request',
+  },
   providers: [
     CredentialsProvider({
       // The name to display on the sign in form (e.g. "Sign in with...")
