@@ -1,7 +1,15 @@
+'use client';
+
 import React from 'react';
+import { useSession } from 'next-auth/react';
 
 const DashBoard = () => {
-  return <div>DashBoard</div>;
+  const { data } = useSession();
+  return (
+    <section data-name="Dashboard">
+      <h1>{data?.user?.name}</h1>
+    </section>
+  );
 };
 
 export default DashBoard;

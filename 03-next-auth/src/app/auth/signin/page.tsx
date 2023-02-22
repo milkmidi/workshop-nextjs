@@ -13,16 +13,20 @@ const Login = () => {
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
-    const cbUrl = params.get('callbackUrl');
-    console.log(cbUrl);
+    let cbUrl = params.get('callbackUrl') || '/';
     try {
       const data = await signIn('credentials', {
+        // redirect: true,
         redirect: false,
         username: name,
         password,
+        // callbackUrl: cbUrl,
       });
       if (data?.status === 200) {
-        router.replace('/');
+        if (cbUrl !== '/') {
+          cbUrl = cbUrl.replace(window.location.origin, '');
+        }
+        router.replace(cbUrl);
       }
       console.log(data);
     } catch (error) {
