@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       <aside className="card flex w-[20%] px-2">
         {Array.from(Array(4).keys()).map((v) => {
           const idx = v + 1;
-          const href = `/14-tailwindcss/example${idx}`;
+          const href = `/15-tailwindcss/example${idx}`;
           return (
             <Link
               data-active={pathname === href}
