@@ -8,6 +8,7 @@
     "build": "react-scripts build"
   },
   "dependencies": {
+    "@redux-devtools/extension": "^3.2.5",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",

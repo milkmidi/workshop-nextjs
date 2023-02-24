@@ -1,14 +1,17 @@
 /* eslint-disable no-underscore-dangle */
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from '@redux-devtools/extension';
 import reducers from './reducers';
+// https://www.npmjs.com/package/@redux-devtools/extension
 
-let preloadedState = null;
-if (process.env.NODE_ENV === 'development') {
-  // @ts-ignore
-  preloadedState = window.__REDUX_DEVTOOLS_EXTENSION__?.();
-}
-const store = createStore(reducers, preloadedState);
+// const store = createStore(reducers, preloadedState);
+const store = createStore(
+  reducers,
+  composeWithDevTools(),
+  // applyMiddleware(...middleware),
+  // other store enhancers if any
+);
 
 export default store;
 
