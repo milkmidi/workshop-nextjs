@@ -1,13 +1,15 @@
-'use client';
+import { getServerSession } from 'next-auth';
+import ClientComponent from './ClientComponent';
 
-import React from 'react';
-import { useSession } from 'next-auth/react';
-
-const DashBoard = () => {
-  const { data } = useSession();
+const DashBoard = async () => {
+  const session = await getServerSession();
+  // console.log(session);
   return (
     <section data-name="Dashboard">
-      <h1>{data?.user?.name}</h1>
+      <div className="my-code">
+        <pre>{JSON.stringify(session, null, 2)}</pre>
+      </div>
+      <ClientComponent />
     </section>
   );
 };
