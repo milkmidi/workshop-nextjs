@@ -1,13 +1,9 @@
-import { fetchTodoList } from '@/libs/api/fetchPostData';
+import { fetchTodoList } from './api';
 import TodoList from './TodoList';
 
 const TodoPage = async () => {
   const data = await fetchTodoList();
-  return (
-    <div>
-      <TodoList data={data} />
-    </div>
-  );
+  return <TodoList data={data} />;
 };
 
 export default TodoPage;

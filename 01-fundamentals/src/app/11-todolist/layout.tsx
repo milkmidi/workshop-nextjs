@@ -1,8 +1,4 @@
 const TodoListLayout = ({ children }: React.PropsWithChildren) => {
-  return (
-    <section data-name="TodoListLayout" className="container mx-auto">
-      {children}
-    </section>
-  );
+  return <section data-name="TodoListLayout">{children}</section>;
 };
 export default TodoListLayout;
