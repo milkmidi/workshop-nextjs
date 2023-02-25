@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
+import { memo } from 'react';
 import useAppStore, { type UserType } from '@/store/useAppStore';
 
 type InjectAppStoreProps = {
-  user: UserType;
+  user?: UserType;
 };
 const StoreInitializer: React.FC<InjectAppStoreProps> = (props) => {
   const { user } = props;
@@ -13,4 +13,4 @@ const StoreInitializer: React.FC<InjectAppStoreProps> = (props) => {
   return null;
 };
 
-export default StoreInitializer;
+export default memo(StoreInitializer);

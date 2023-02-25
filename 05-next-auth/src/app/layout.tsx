@@ -1,15 +1,15 @@
 import '@/styles/globals.scss';
 import '@/styles/style.scss';
-import { type Session } from 'next-auth';
-import { headers } from 'next/headers';
+// import { type Session } from 'next-auth';
+// import { headers } from 'next/headers';
 import Link from 'next/link';
-// import { getServerSession } from 'next-auth/next';
-// import { authOptions } from '../pages/api/auth/[...nextauth]';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../pages/api/auth/[...nextauth]';
 import AuthContextWrapper from './AuthContextWrapper';
 import StoreInitializer from './StoreInitializer.client';
 import Avatar from './Avatar';
 
-async function getSession(cookie: string): Promise<Session> {
+/* async function getSession(cookie: string): Promise<Session> {
   const response = await fetch('http://localhost:3000/api/auth/session', {
     headers: {
       cookie,
@@ -17,30 +17,31 @@ async function getSession(cookie: string): Promise<Session> {
   });
   const session = await response.json();
   return Object.keys(session).length > 0 ? session : null;
-}
+} */
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const session = await getSession(headers().get('cookie') ?? '');
+export default async function RootLayout({ children }: React.PropsWithChildren) {
+  // const session = await getSession(headers().get('cookie') ?? '');
   // console.log(session);
-  // const session2 = await getServerSession(authOptions);
-  // console.log(session2);
+  const session = await getServerSession(authOptions);
+  console.log(session);
   return (
     <html lang="en">
       <head />
       <body>
         <AuthContextWrapper session={session}>
-          <nav className="flex bg-black p-2">
-            <Link href="/" className="my-btn bg-white">
-              Home
-            </Link>
-            <Link href="/dashboard" className="my-btn bg-white">
-              Dashboard
-            </Link>
-            <div className="ml-auto">
-              <Avatar />
+          <nav className="p-2">
+            <div className="flex rounded-lg bg-black p-2">
+              <Link href="/" className="my-btn bg-white">
+                Home
+              </Link>
+              <Link href="/dashboard" className="my-btn bg-white">
+                Dashboard
+              </Link>
+              <div className="ml-auto">
+                <Avatar />
+              </div>
             </div>
           </nav>
-          {/* @ts-ignore */}
           <StoreInitializer user={session?.user} />
           {children}
         </AuthContextWrapper>

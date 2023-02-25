@@ -1,9 +1,7 @@
 import { create } from 'zustand';
+import { DefaultSession } from 'next-auth';
 
-export type UserType = {
-  name: string;
-  email: string;
-};
+export type UserType = DefaultSession['user'];
 
 type AppStore = {
   user?: UserType;
@@ -13,7 +11,7 @@ const useAppStore = create<AppStore>((set) => {
   return {
     user: undefined,
     setUser(user: UserType) {
-      // console.log('serUser', user);
+      console.log('serUser', user);
       set({
         user,
       });
