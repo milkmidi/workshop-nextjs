@@ -7,7 +7,7 @@ import { use } from 'react';
 async function fetchData() {
   // You would usually fetch data from an API here.
   console.log('fetchData');
-  const res = await fetch('http://localhost:3000/api/hello');
+  const res = await fetch('https://milkmidi.vercel.app/api/healthy');
   const data = await res.json();
   return data; // !!!!!!!!!! Warning, Infinite Loop
   // return JSON.stringify(data); // Method 1
