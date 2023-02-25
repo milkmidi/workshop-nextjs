@@ -3,10 +3,15 @@ import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 // Initialize NextAuth
 export const authOptions: NextAuthOptions = {
+  // https://next-auth.js.org/configuration/options#secret
+  secret: process.env.NEXTAUTH_SECRET,
+  // https://next-auth.js.org/configuration/options#session
   session: {
     strategy: 'jwt',
+    // Seconds
+    // maxAge: 30 * 24 * 60 * 60, // 30 days
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  // https://next-auth.js.org/configuration/options#pages
   pages: {
     signIn: '/auth/signin',
     // verifyRequest: '/auth/verify-request',

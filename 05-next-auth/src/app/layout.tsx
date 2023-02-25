@@ -7,6 +7,7 @@ import Link from 'next/link';
 // import { authOptions } from '../pages/api/auth/[...nextauth]';
 import AuthContextWrapper from './AuthContextWrapper';
 import StoreInitializer from './StoreInitializer.client';
+import Avatar from './Avatar';
 
 async function getSession(cookie: string): Promise<Session> {
   const response = await fetch('http://localhost:3000/api/auth/session', {
@@ -27,14 +28,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <head />
       <body>
-        <nav className="bg-black p-2">
-          <Link href="/dashboard" className="my-btn bg-white">
-            Dashboard
-          </Link>
-        </nav>
-        {/* @ts-ignore */}
-        <StoreInitializer user={session?.user} />
-        <AuthContextWrapper session={session}>{children}</AuthContextWrapper>
+        <AuthContextWrapper session={session}>
+          <nav className="flex bg-black p-2">
+            <Link href="/" className="my-btn bg-white">
+              Home
+            </Link>
+            <Link href="/dashboard" className="my-btn bg-white">
+              Dashboard
+            </Link>
+            <div className="ml-auto">
+              <Avatar />
+            </div>
+          </nav>
+          {/* @ts-ignore */}
+          <StoreInitializer user={session?.user} />
+          {children}
+        </AuthContextWrapper>
       </body>
     </html>
   );
