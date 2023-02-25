@@ -34,8 +34,7 @@ const RootTemplate = ({ children }: React.PropsWithChildren) => {
             <ActiveLink href="/09-streaming">09-streaming</ActiveLink>
             <ActiveLink href="/10-products">10-products</ActiveLink>
             <ActiveLink href="/11-todolist">11-todolist</ActiveLink>
-            <ActiveLink href="/13-jwt">13-jwt</ActiveLink>
-            <ActiveLink href="/14-use">14-use</ActiveLink>
+            <ActiveLink href="/12-use">12-use</ActiveLink>
           </div>
         </nav>
       </div>
