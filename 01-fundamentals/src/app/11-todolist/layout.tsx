@@ -1,5 +1,4 @@
-// @ts-ignore
-const TodoListLayout = ({ children }) => {
+const TodoListLayout = ({ children }: React.PropsWithChildren) => {
   return (
     <section data-name="TodoListLayout" className="container mx-auto">
       {children}

@@ -1,7 +1,6 @@
 import React from 'react';
 
-// @ts-ignore
-const Layout = ({ children }) => {
+const Layout = ({ children }: React.PropsWithChildren) => {
   return <div>{children}</div>;
 };
 

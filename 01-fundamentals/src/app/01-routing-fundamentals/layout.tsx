@@ -1,7 +1,4 @@
-import React from 'react';
-
-// @ts-ignore
-const Layout = ({ children }) => {
+const Layout = ({ children }: React.PropsWithChildren) => {
   return <section data-name="layout">{children}</section>;
 };
 

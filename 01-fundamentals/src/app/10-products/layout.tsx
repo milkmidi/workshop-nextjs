@@ -1,7 +1,4 @@
-import React from 'react';
-
-// @ts-ignore
-function StreamLayout({ children }) {
+function ProductsLayout({ children }: React.PropsWithChildren) {
   return (
     <section data-name="Product">
       <h1 className="text-3xl">StreamLayout</h1>
@@ -10,4 +7,4 @@ function StreamLayout({ children }) {
   );
 }
 
-export default StreamLayout;
+export default ProductsLayout;

@@ -1,7 +1,4 @@
-import React from 'react';
-
-// @ts-ignore
-const Template = ({ children }) => {
+const Template = ({ children }: React.PropsWithChildren) => {
   return <section data-name="template">{children}</section>;
 };
 

@@ -1,7 +1,4 @@
-import React from 'react';
-
-// @ts-ignore
-const ErrorLayout = ({ children }) => {
+const ErrorLayout = ({ children }: React.PropsWithChildren) => {
   return <div>{children}</div>;
 };
 

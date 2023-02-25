@@ -15,7 +15,7 @@ const ActiveLink: React.FC<ActiveLinkProps> = ({ href, children }) => {
   );
 };
 
-const RootTemplate = ({ children }: { children: React.ReactNode }) => {
+const RootTemplate = ({ children }: React.PropsWithChildren) => {
   return (
     <>
       <div className="my-nav-space !h-[200px]" />

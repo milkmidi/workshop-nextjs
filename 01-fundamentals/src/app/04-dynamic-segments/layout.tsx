@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-// @ts-ignore
-const Layout = ({ children }) => {
+
+const Layout = ({ children }: React.PropsWithChildren) => {
   return (
     <div>
       <div className="flex">

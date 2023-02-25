@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { type User } from '@/libs/api/authApi';
 import useAppStore from '@/store/useAppStore';
 

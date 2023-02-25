@@ -14,11 +14,11 @@ const fetchProductData = (): Promise<ProductType[]> => {
   ).then((response) => response.json());
 };
 
-async function StreamingPage() {
+async function ProductsPage() {
   const products = await fetchProductData();
   return (
     <div>
-      <h4 className="text-xl">Hi, StreamingPage</h4>
+      <h4 className="text-xl">Hi, Products</h4>
       <div className="-mx-2 flex flex-wrap">
         {products.map((product) => {
           return (
@@ -37,4 +37,4 @@ async function StreamingPage() {
   );
 }
 
-export default StreamingPage;
+export default ProductsPage;

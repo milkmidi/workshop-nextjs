@@ -1,4 +1,4 @@
-type PageProps = {
+type PageProps = React.PropsWithChildren & {
   params: Record<'slug', string>;
 };
 
