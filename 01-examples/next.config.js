@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   eslint: {
-    // ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true,
   },
 };
 
