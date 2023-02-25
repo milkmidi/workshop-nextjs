@@ -3,11 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-type TemplateProps = {
-  children: React.ReactNode;
-};
-
-const Template: React.FC<TemplateProps> = ({ children }) => {
+const Template = ({ children }: React.PropsWithChildren) => {
   const pathname = usePathname();
   return (
     <>

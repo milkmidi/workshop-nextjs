@@ -25,7 +25,7 @@ const RootTemplate = ({ children }: React.PropsWithChildren) => {
             <ActiveLink href="/">Home</ActiveLink>
             <ActiveLink href="/01-routing-fundamentals">01-routing</ActiveLink>
             <ActiveLink href="/02-dashboard/settings">02-dashboard/settings</ActiveLink>
-            <ActiveLink href="/organize-a">02-organize routes</ActiveLink>
+            <ActiveLink href="/organize-a">03-organize routes</ActiveLink>
             <ActiveLink href="/04-dynamic-segments/123">04-dynamic-segments</ActiveLink>
             <ActiveLink href="/05-error-page">05-error</ActiveLink>
             <ActiveLink href="/isr">06-isr/ssr</ActiveLink>

@@ -4,9 +4,13 @@
 
 import { useState } from 'react';
 import useSWR from 'swr';
-import { type TodoType } from '@/libs/api/fetchPostData';
 import axios from 'axios';
 
+type TodoType = {
+  id: string;
+  text: string;
+  done: boolean;
+};
 const fetchTodoList = (): Promise<TodoType[]> => {
   return axios(
     `https://my-json-server.typicode.com/milkmidi/typicode/todolist?_delay=1000&_d_=${Date.now()}`,

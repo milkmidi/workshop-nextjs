@@ -7,7 +7,7 @@ type PostData = {
 };
 const fetchAllData = (): Promise<PostData[]> => {
   return fetch(
-    `https://my-json-server.typicode.com/milkmidi/typicode/posts?_delay=1000&_d_=${Date.now()}`,
+    `https://my-json-server.typicode.com/milkmidi/typicode/posts?_delay=500&_d_=${Date.now()}`,
   ).then((res) => res.json());
 };
 
@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 
 const fetchDataWithId = (id: string): Promise<PostData> => {
   return fetch(
-    `https://my-json-server.typicode.com/milkmidi/typicode/posts/${id}?_delay=1000&_d_=${Date.now()}`,
+    `https://my-json-server.typicode.com/milkmidi/typicode/posts/${id}?_delay=500&_d_=${Date.now()}`,
   ).then((res) => res.json());
 };
 

@@ -1,5 +1,8 @@
-import { type TodoType } from '@/libs/api/fetchPostData';
-
+type TodoType = {
+  id: string;
+  text: string;
+  done: boolean;
+};
 const fetchTodoList = async (): Promise<TodoType[]> => {
   const res = await fetch(
     `https://my-json-server.typicode.com/milkmidi/typicode/todolist?_delay=1000&_d_=${Date.now()}`,

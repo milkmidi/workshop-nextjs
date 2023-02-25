@@ -7,7 +7,9 @@ import { use } from 'react';
 async function fetchData() {
   // You would usually fetch data from an API here.
   console.log('fetchData');
-  const res = await fetch('https://milkmidi.vercel.app/api/healthy');
+  const res = await fetch(
+    `https://my-json-server.typicode.com/milkmidi/typicode/profile?_delay=2000?_d_=${Date.now()}`,
+  );
   const data = await res.json();
   return data; // !!!!!!!!!! Warning, Infinite Loop
   // return JSON.stringify(data); // Method 1

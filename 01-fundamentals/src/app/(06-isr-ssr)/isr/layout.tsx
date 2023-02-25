@@ -1,6 +1,4 @@
-import React from 'react';
-
-const ISRLayout = ({ children }: { children: React.ReactNode }) => {
+const ISRLayout = ({ children }: React.PropsWithChildren) => {
   return (
     <section data-name="isr - layout" className="container mx-auto space-y-9">
       <div className=" whitespace-nowrap rounded-lg bg-gray-700 px-3 py-1 text-xl text-gray-100">
