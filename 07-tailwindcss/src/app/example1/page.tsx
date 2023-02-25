@@ -31,7 +31,7 @@ const ActiveExample = () => {
     <section data-name="addVariant data-active">
       <button
         onClick={atToggleActive}
-        className="data-[active='true']:bg-red-400 peer mm-btn data-[active='true']:text-red"
+        className="peer mm-btn data-[active='true']:bg-red-400 data-[active='true']:text-red"
         data-active={active}
       >
         toggle
@@ -39,7 +39,7 @@ const ActiveExample = () => {
       <h1 className="peer-data-active:bg-red">Peer</h1>
       <button
         onClick={atToggleActive}
-        className="data-active:bg-red-400 peer mm-btn data-active:text-red"
+        className="peer mm-btn data-active:bg-red-400 data-active:text-red"
         data-active={active}
       >
         toggle

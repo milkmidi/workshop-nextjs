@@ -36,7 +36,6 @@ const RootTemplate = ({ children }: { children: React.ReactNode }) => {
             <ActiveLink href="/11-todolist">11-todolist</ActiveLink>
             <ActiveLink href="/13-jwt">13-jwt</ActiveLink>
             <ActiveLink href="/14-use">14-use</ActiveLink>
-            <ActiveLink href="/15-tailwindcss">15-tailwindcss</ActiveLink>
           </div>
         </nav>
       </div>
